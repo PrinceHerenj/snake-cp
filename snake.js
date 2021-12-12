@@ -13,10 +13,10 @@ let snake = [
 
 let score = 0;
 let changing_direction = false;
-let dx = 10;
-let dy = 0;
 let food_x;
 let food_y;
+let dx = 10;
+let dy = 0;
 
 const snakeboard = document.getElementById("snakeboard");
 const snakeboard_ctx = snakeboard.getContext("2d");
@@ -118,7 +118,7 @@ function change_direction(event) {
 }
 
 function move_snake() {
-  const head = { x: snake[0].x + dx, y: snake[0].y };
+  const head = { x: snake[0].x + dx, y: snake[0].y + dy };
   snake.unshift(head);
   const has_eaten_food = snake[0].x === food_x && snake[0].y === food_y;
   if (has_eaten_food) {
