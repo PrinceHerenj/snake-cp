@@ -56,8 +56,8 @@ function drawFood() {
 }
 
 function drawSnakePart(snakePart) {
-  snakeboard_ctx.fillStyle = "lightblue";
-  snakeboard_ctx.strokestyle = "darkblue";
+  snakeboard_ctx.fillStyle = snake_col;
+  snakeboard_ctx.strokestyle = snake_border;
   snakeboard_ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
   snakeboard_ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
 }
@@ -74,7 +74,7 @@ function has_game_ended() {
 }
 
 function random_food(min, max) {
-  return Math.round(Math.random() * (max - min) + min / 10) * 10;
+  return Math.round((Math.random() * (max - min) + min) / 10) * 10;
 }
 
 function gen_food() {
