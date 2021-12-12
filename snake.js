@@ -25,8 +25,10 @@ gen_food();
 document.addEventListener("keydown", change_direction);
 
 function main() {
-  if (has_game_ended()) return;
-
+  if (has_game_ended()) {
+    document.getElementById("score").innerHTML = `Game Over ${score}`;
+    return;
+  }
   changing_direction = false;
   setTimeout(function onTick() {
     clear_board();
