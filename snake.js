@@ -26,7 +26,8 @@ document.addEventListener("keydown", change_direction);
 
 function main() {
   if (has_game_ended()) {
-    document.getElementById("score").innerHTML = `Game Over ${score}`;
+    document.getElementById("score").innerHTML = `Game Over`;
+    alert(`Final Score ${score}`);
     return;
   }
   changing_direction = false;
@@ -36,7 +37,7 @@ function main() {
     move_snake();
     drawSnake();
     main();
-  }, 100);
+  }, 80);
 }
 
 function clear_board() {
